@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { menuType, setMenu, setWorkBench, workBenchType } from "../config/currentSlice";
+import { menuType, setIsOnPhone, setMenu, setWorkBench, workBenchType } from "../config/currentSlice";
 
 const useConfig = () => {
 
@@ -14,9 +14,13 @@ const useConfig = () => {
         dispatch(setWorkBench(thisWorkBench))
     }
 
+    const setCurrentIsOnPhone = (v: boolean) => {
+        dispatch(setIsOnPhone(v))
+    }
+
     return ({
         menu, workBench,
-        setCurrentMenu, setCurrentWorkBench
+        setCurrentMenu, setCurrentWorkBench, setCurrentIsOnPhone
     })
 
 }

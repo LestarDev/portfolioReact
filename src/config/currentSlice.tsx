@@ -7,12 +7,14 @@ export type workBenchType = "Simply";
 interface CounterState {
     menu: menuType,
     workBench: workBenchType,
+    isOnPhone: boolean
 }
   
   // Define the initial state using that type
   const initialState: CounterState = {
     menu: "Hamburger",
     workBench: "Simply",
+    isOnPhone: false
   }
   
   export const currencySlice = createSlice({
@@ -27,9 +29,12 @@ interface CounterState {
       setWorkBench: (state, action: PayloadAction<workBenchType>) => {
         state.workBench = action.payload
       },
+      setIsOnPhone: (state, action: PayloadAction<boolean>) => {
+        state.isOnPhone = action.payload
+      },
     },
   })
   
-  export const { setMenu, setWorkBench } = currencySlice.actions
+  export const { setMenu, setWorkBench, setIsOnPhone } = currencySlice.actions
   
   export default currencySlice.reducer

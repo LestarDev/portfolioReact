@@ -1,0 +1,41 @@
+@media only screen and (max-width: 768px) {
+    .sliderMenuToClick{
+        display: none !important;
+    }    
+
+    .sliderMenuConteiner{
+        overflow-x: scroll !important;
+    }
+}
+
+.workBench{
+    display: flex;
+    flex-direction: column;
+}
+
+.sliderMenuConteiner{
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    background: var(--lightRed);
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.sliderMenuToClick{
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+}
+
+.sliderMenuConteiner > div{
+    min-width: 10rem;
+    scroll-snap-align: center;
+}
+
+.sliderMenuToClick > div{
+    min-width: 5rem;
+    cursor: pointer;
+}
