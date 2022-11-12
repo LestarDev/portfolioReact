@@ -4,10 +4,10 @@ const Menu = () => {
     return (
         <nav className="menu">
             <ol>
-                <li>Home</li>
-                <li>WorkBench</li>
-                <li>Github</li>
-                <li>Me</li>
+                <li><p>Index</p></li>
+                <li><p>WorkBench</p></li>
+                <li><p>Github</p></li>
+                <li><p>Me</p></li>
             </ol>
         </nav>
     )
