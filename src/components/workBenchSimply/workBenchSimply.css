@@ -1,14 +1,19 @@
 @media only screen and (max-width: 768px) {
-    .sliderMenuToClick{
-        display: none !important;
+    div.sliderMenuToClick{
+        display: none;
     }    
 
-    .sliderMenuConteiner{
-        overflow-x: scroll !important;
+    div.sliderMenuConteiner{
+        overflow-x: scroll;
     }
 }
 
 .workBench{
+    display: flex;
+    flex-direction: column;
+}
+
+.workBenchMenu{
     display: flex;
     flex-direction: column;
 }
@@ -35,7 +40,69 @@
     scroll-snap-align: center;
 }
 
-.sliderMenuToClick > div{
+.sliderMenuToClick div{
     min-width: 5rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.sliderMenuToClick div:last-child{
+    justify-content: flex-end;
+}
+
+.sliderMenuToClick div:first-child span{
+    transform: scale(0) translateX(-2rem);
+    transition: all 0.4s;
+}
+
+.sliderMenuToClick div:hover:first-child span{
+    transform: scale(1) translateX(0);
+}
+
+.sliderMenuToClick div:last-child span{
+    transform: scale(0) translateX(2rem);
+    transition: all 0.4s;
+    z-index: 1;
+}
+
+.sliderMenuToClick div:hover:last-child span{
+    transform: scale(1) translateX(0);
+}
+
+.sliderMenuToClick div:first-child::before{
+    content: '';
+    background: var(--crimson);
+    transform: scaleX(0.05);
+    transform-origin:left center;
+    transition: all 0.5s;
+    width: 1.5rem;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.sliderMenuToClick div:last-child::after{
+    content: '';
+    background: var(--crimson);
+    transform: scaleX(0.05);
+    transform-origin:right center;
+    transition: all 0.5s;
+    width: 1.5rem;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.sliderMenuToClick div:hover:first-child::before{
+    transform: scale(1);
+}
+
+.sliderMenuToClick div:hover:last-child::after{
+    transform: scale(1);
 }

@@ -15,22 +15,28 @@ const WorkBenchSimply = () => {
 
     return (
         <div className="workBench">
-            <div className="sliderMenuConteiner" ref={sliderMenuRef}>
-                <div>
-                    Simply Menu
+            <div className="workBenchMenu">
+                <div className="sliderMenuConteiner" ref={sliderMenuRef}>
+                    <div>
+                        Simply Menu
+                    </div>
+                    <div>
+                        Roteted Menu
+                    </div>
                 </div>
-                <div>
-                    Roteted Menu
+                <div className="sliderMenuToClick">
+                    <div onClick={(e: React.MouseEvent)=>{
+                        if(sliderMenuRef.current!.scrollLeft!=0) sliderMenuRef.current!.scrollLeft-=160;
+                        console.log(sliderMenuRef.current!.scrollLeft)
+                    }}>
+                        <span>&lt;</span>
+                    </div>
+                    <div onClick={(e: React.MouseEvent)=>{
+                        sliderMenuRef.current!.scrollLeft+=160;
+                    }}>
+                        <span>&gt;</span>
+                    </div>
                 </div>
-            </div>
-            <div className="sliderMenuToClick">
-                <div onClick={(e: React.MouseEvent)=>{
-                    if(sliderMenuRef.current!.scrollLeft!=0) sliderMenuRef.current!.scrollLeft-=160;
-                    console.log(sliderMenuRef.current!.scrollLeft)
-                }}></div>
-                <div onClick={(e: React.MouseEvent)=>{
-                    sliderMenuRef.current!.scrollLeft+=160;
-                }}></div>
             </div>
         </div>
     )
