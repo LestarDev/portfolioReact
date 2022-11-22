@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export type menuType = "Hamburger" | "";
+export type menuType = "Hamburger" | "Circle";
 
 export type workBenchType = "Simply";
 
